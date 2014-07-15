@@ -1,0 +1,90 @@
+clearfix()
+  &:before
+  &:after
+    content: ""
+    display: table
+  &:after
+    clear: both
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  -webkit-font-smoothing: antialiased
+
+body,
+input,
+textarea,
+button
+  font: 400 14px 'Cabin', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif
+
+input,
+button
+  display: block
+  width: 100%
+  padding: 10px 12px
+  outline: none
+  border-radius: 3px
+  margin-bottom: 10px
+  border: none
+  box-shadow: 0 2px #000
+
+button
+  background: #00ab9f
+  font-weight: 700
+  color: #fff
+  cursor: pointer
+  box-shadow: inset 0 -2px rgba(0, 0, 0, 0.15), 0 2px #000
+
+body
+  background: #171d25
+  color: #fff
+
+.container
+  width: 480px
+  margin: 0 auto
+
+header
+  text-align: center
+  padding-top: 40px
+
+  a
+    font-weight: 700
+    font-size: 36px
+    color: #fff
+    text-decoration: none
+
+.lead
+  text-align: center
+  padding: 20px
+  opacity: 0.4
+  line-height: 1.4
+
+.user
+  line-height: 25px
+  clearfix()
+  padding: 10px 0
+  border-bottom: 1px rgba(255, 255, 255, 0.1) solid
+  
+  &:last-child
+    border-bottom: none
+  
+  .name
+    float: left
+    
+  .status
+    width: 25px
+    height: 25px
+    float: right
+    transition: 0.25s ease all
+    opacity: 0
+    border-radius: 25px
+    box-shadow: inset 0 2px rgba(255, 255, 255, 0.25)
+    
+    &.out
+      background: #c00
+      opacity: 1
+    
+    &.in
+      background: #090
+      opacity: 1

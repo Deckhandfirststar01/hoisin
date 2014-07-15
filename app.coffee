@@ -10,6 +10,7 @@ scanner   = new Scanner('192.168.1.1/24')
 app.use(require('morgan')('dev'))
 app.use(require('serve-static')("#{__dirname}/public"))
 app.use(require('body-parser').urlencoded(extended: true))
+app.use(require('connect-assets')())
 app.set('view engine', 'jade')
 
 # configure scanner to proxy results through to socket.io

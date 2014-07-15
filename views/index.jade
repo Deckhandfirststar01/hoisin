@@ -1,40 +1,15 @@
-doctype html
-html
-  head
-    meta(charset='utf-8')
-    title foo
-    style.
-      .status {
-        background: #eee;
-        width: 30px;
-        height: 30px;
-        display: inline-block;
-        margin-left: 20px;
-        transition: 0.25s ease background;
-      }
-      .status.out {
-        background: red;
-      }
-      .status.in {
-        background: green;
-      }
-  body
-    h1 who's in?
-    
-    - each name, mac in users
-      .user(data-mac=mac)
-        strong=name
-        .status
-    
-    script(src='/socket.io/socket.io.js')
-    script.
-      var socket = io();
-      socket.on('results', function(data) {
-        var users = document.querySelectorAll('.user');
-        for(var i = 0; i < users.length; ++i) {
-          var user = users[i],
-              mac  = user.getAttribute('data-mac');
-          
-          user.querySelector('.status').className = 'status ' + (data.indexOf(mac) !== -1 ? 'in' : 'out');
-        }
-      });
+extends layout
+
+block body
+  p.lead
+    | This is a real-time dashboard of who's currently in the office.
+    br
+    | Ideal for figuring out just how late Josh is in comparison to everyone else :)
+  - each user in users
+    .user(data-mac=user.mac)
+      .name=user.name
+      .status
+
+block js
+  script(src='/socket.io/socket.io.js')
+  != js('app')
