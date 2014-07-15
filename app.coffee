@@ -1,11 +1,10 @@
+# set up express, socket.io, models, scanner
+app       = require('express')()
+server    = require('http').Server(app)
+io        = require('socket.io')(server)
+{User}    = require('./models/user')
 {Scanner} = require('./scanner')
-{User} = require('./models/user')
-
-# set up express, socket.io, scanner
-app = require('express')()
-server = require('http').Server(app)
-io = require('socket.io')(server)
-scanner = new Scanner('192.168.1.1/24')
+scanner   = new Scanner('192.168.1.1/24')
 
 # configure express middleware
 app.use(require('morgan')('dev'))
@@ -14,13 +13,11 @@ app.use(require('body-parser').urlencoded(extended: true))
 app.set('view engine', 'jade')
 
 # configure scanner to proxy results through to socket.io
-scanner.on('results', ->
+scanner.on 'results', ->
   io.emit('results', scanner.anonymousAddresses())
-)
 
-io.on('connection', (socket) ->
+io.on 'connection', (socket) ->
   socket.emit('results', scanner.anonymousAddresses())
-)
 
 # start scanner
 scanner.scan()
@@ -44,5 +41,5 @@ app.post '/enrol', (req, res) ->
   User.create name, mac, ->
     res.redirect('/')
 
-# listen on port 80
-server.listen(8080)
+# listen on PORT variable or 8080
+server.listen(process.env.PORT or 8080)
