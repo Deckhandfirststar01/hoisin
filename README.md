@@ -5,9 +5,9 @@ in another country or simply a big ol' office where you can't see everyone!
 
 It works by continuously scanning the network and recognising the 
 [MAC addresses](http://en.wikipedia.org/wiki/MAC_address) of people's computers.
-When they're woken up in the morning, they'll connect to the network and 
-seamlessly mark that person as being present in Hoisin. When they go to sleep at 
-night, Hoisin detects that they're no longer on the network and marks that
+When a machine wakes up in the morning, it'll connect to the network and 
+seamlessly mark that person as being present in Hoisin. When it goes to sleep at 
+night, Hoisin detects that it's no longer on the network and marks that
 person as out of the office.
 
 ## Installation
