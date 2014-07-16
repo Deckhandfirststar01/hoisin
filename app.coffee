@@ -2,8 +2,8 @@
 app       = require('express')()
 server    = require('http').Server(app)
 io        = require('socket.io')(server)
-{User}    = require('./models/user')
-{Scanner} = require('./scanner')
+{User}    = require('./lib/models/user')
+{Scanner} = require('./lib/scanner')
 scanner   = new Scanner('192.168.1.1/24')
 
 # configure express middleware
