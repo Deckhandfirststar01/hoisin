@@ -24,4 +24,4 @@ They'll then show up at `http://<your_ip>:8080` for everyone can see.
 - You can't enrol your own machine as nmap doesn't scan it
 - Won't work if your network doesn't live on 192.168.x.x
 - No config, so Redis will connect to localhost:5432/1 by default, which may not be good
-- Pretty much untested
+- Pretty much untested outside of the codegent office
