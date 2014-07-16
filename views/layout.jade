@@ -4,7 +4,7 @@ html
     meta(charset='utf-8')
     title Hoisin
     meta(name='viewport', content='width=device-width, user-scalable=no, minimal-ui')
-    link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Cabin:400,700')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Cabin:400,700')
     != css('app')
   body
     .container
@@ -12,5 +12,12 @@ html
         a(href='/') Hoisin
       
       block body
-    
+      
+      footer
+        .attribution
+          | a 
+          a(href='http://www.codegent.com', target='_blank') codegent
+          |  hack
+        a.github(href='https://github.com/code/hoisin', target='_blank')
+          img(src='/img/github.png')
     block js

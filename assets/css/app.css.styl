@@ -58,6 +58,30 @@ header
     color: #fff
     text-decoration: none
 
+footer
+  margin-top: 20px
+  text-align: center
+  font-size: 12px
+  
+  .attribution
+    margin-bottom: 10px
+    color: rgba(255, 255, 255, 0.25)
+    
+    a
+      color: #fff
+      color: rgba(255, 255, 255, 0.5)
+  
+  a.github
+    opacity: 0.1
+    transition: 0.25s ease opacity
+    
+    &:hover
+      opacity: 0.3
+    
+    img
+      border: none
+      width: 16px
+
 .lead
   text-align: center
   padding: 20px
@@ -68,10 +92,10 @@ header
   line-height: 25px
   clearfix()
   padding: 10px 0
-  border-bottom: 1px rgba(255, 255, 255, 0.1) solid
+  border-top: 1px rgba(255, 255, 255, 0.1) solid
   
   &:last-child
-    border-bottom: none
+    border-bottom: 1px rgba(255, 255, 255, 0.1) solid
   
   .name
     float: left

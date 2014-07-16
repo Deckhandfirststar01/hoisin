@@ -3,10 +3,12 @@ extends layout
 block body
   p.lead
     | This is a real-time dashboard of who's currently in the office.
-  - each user in users
-    .user(data-mac=user.mac)
-      .name=user.name
-      .status
+  
+  .users
+    - each user in users
+      .user(data-mac=user.mac)
+        .name=user.name
+        .status
 
 block js
   script(src='/socket.io/socket.io.js')
