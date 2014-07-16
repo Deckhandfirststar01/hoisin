@@ -14,8 +14,14 @@ person as out of the office.
 You'll need Node.js, Redis and nmap installed on your machine for this to work.
 On OS X, you can get all three at once with `brew install redis nodejs nmap`.
 
-From there, clone this repo and run `coffee app.coffee`. The app will pop up on
+From there, clone this repo, do a cheeky `npm install` and run `coffee app.coffee`. The app will pop up on
 port 8080 and start scanning immediately. You can then send users to
 `http://<your_ip>:8080/enrol` and start getting them to register their machines.
 
 They'll then show up at `http://<your_ip>:8080` for everyone can see.
+
+## Known Issues
+- You can't enrol your own machine as nmap doesn't scan it
+- Won't work if your network doesn't live on 192.168.x.x
+- No config, so Redis will connect to localhost:5432/1 by default, which may not be good
+- Pretty much untested
