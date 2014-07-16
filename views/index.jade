@@ -3,8 +3,6 @@ extends layout
 block body
   p.lead
     | This is a real-time dashboard of who's currently in the office.
-    br
-    | Ideal for figuring out just how late Josh is in comparison to everyone else :)
   - each user in users
     .user(data-mac=user.mac)
       .name=user.name
